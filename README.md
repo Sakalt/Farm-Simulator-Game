@@ -4,8 +4,7 @@ So now it's your turn to sell what you have? will you wait?
 
 ## Installation
 ```bash
-Download the project and run the index.html. thats it! You can modify the code or add some features or just enjoy. its up to you :)
-that's it.
+Download the project and run the index.html. that's it.
 ```
 
 ## Features
