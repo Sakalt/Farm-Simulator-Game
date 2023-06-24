@@ -39,15 +39,14 @@ I think thats enough. Good Luck <3
 ![Screenshot 2023-04-02 184628](https://user-images.githubusercontent.com/125195062/229364234-5255de10-3659-4ca7-9774-dd31ae622db4.png)
 ![Screenshot 2023-04-02 184618](https://user-images.githubusercontent.com/125195062/229364235-e63b04a5-523e-4608-8464-7b219e8b61db.png)
 ![Screenshot 2023-04-02 184605](https://user-images.githubusercontent.com/125195062/229364238-e63ed4d5-679e-47ff-bbde-ee352804c0f2.png)
+![Screenshot 2023-06-24 111744](https://github.com/ErenElagz/Farm-Simulator-Game/assets/125195062/ef4be995-0aed-4e00-a0c7-55262ccf8e50)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
-
 ## 🔗 Links
 [![Github](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/ErenElagz)
 [![Twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/erenelagz)
-
 
 ## Support, Contact and Feedback
 If you have any question or feedback, please reach out to me at elagzeren@gmail.com
