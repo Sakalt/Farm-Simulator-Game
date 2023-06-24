@@ -4,7 +4,7 @@ So now it's your turn to sell what you have? will you wait?
 
 ## Installation
 ```bash
-Download the project and run the index.html. that's it.
+Download the project and run the index.html. thats it
 ```
 
 ## Features
@@ -34,7 +34,7 @@ I think thats enough. Good Luck <3
  4. JavaScript
  5. JS DOM
 
-## Some Screenshots from the Game...!
+## Screenshots
 ![Screenshot 2023-04-02 184640](https://user-images.githubusercontent.com/125195062/229364226-a226d9d3-f93a-4aa5-9e25-8ea8706a7b38.png)
 ![Screenshot 2023-04-02 184628](https://user-images.githubusercontent.com/125195062/229364234-5255de10-3659-4ca7-9774-dd31ae622db4.png)
 ![Screenshot 2023-04-02 184618](https://user-images.githubusercontent.com/125195062/229364235-e63b04a5-523e-4608-8464-7b219e8b61db.png)
