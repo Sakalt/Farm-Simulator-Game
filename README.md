@@ -18,7 +18,7 @@ Download the project and run the index.html. thats it
  - See your Farm Stats
 
 ## Documentation
-
+https://chatgpt.com
 ### How to Play
 It's turn based Farm Managment Game. Your purpose must be have a biggest Farm.  
 But you have some issues like animal feed and plant fertilizer. This ıtems spending every week from the your producer items.  
