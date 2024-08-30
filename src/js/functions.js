@@ -226,3 +226,47 @@ function DisplayAllItems() {
         m++;
     }
 }
+
+// Climate Object (気候オブジェクト)
+const climate = {
+    condition: 'normal', // 'normal', 'drought', 'rainy', etc.
+    updateCondition() {
+        const conditions = ['normal', 'drought', 'rainy'];
+        this.condition = conditions[Math.floor(Math.random() * conditions.length)];
+    },
+    applyEffects() {
+        switch (this.condition) {
+            case 'drought':
+                for (let plant of plantList) {
+                    plant.productionCoefficient *= 0.8; // 生産量が減少
+                }
+                break;
+            case 'rainy':
+                for (let plant of plantList) {
+                    plant.productionCoefficient *= 1.2; // 生産量が増加
+                }
+                break;
+            default:
+                // 通常状態のまま
+                break;
+        }
+    }
+};
+
+// Update the climate condition and apply effects (気候条件の更新と影響の適用)
+function updateClimate() {
+    climate.updateCondition();
+    climate.applyEffects();
+}
+
+// Weekly Update Function (週次更新関数)
+function WeeklyUpdate() {
+    updateClimate();
+    Pricing();
+    Production();
+    WeeklyConsumption();
+    DisplayAllItems();
+}
+
+// 週次更新関数の呼び出し
+setInterval(WeeklyUpdate, 1000); // 例として1秒ごとに更新
