@@ -1,4 +1,4 @@
-//Pricing Function
+// Pricing Function (価格更新関数)
 function Pricing() {
     function getRandomCoefficient(min, max) {
         return Math.random() * (max - min) + min;
@@ -20,28 +20,28 @@ function Pricing() {
     }
 }
 
-//Production Function
+// Production Function (生産関数)
 function Production() {
-    milk.number = milk.number + cow.number * cow.productionCoefficient;
-    wool.number = wool.number + sheep.number * sheep.productionCoefficient;
-    egg.number = egg.number + chicken.number * chicken.productionCoefficient;
-    fabric.number = fabric.number + cotton.number * cotton.productionCoefficient;
-    fame.number = fame.number + wheat.number * wheat.productionCoefficient;
-    oil.number = oil.number + sunflower.number * sunflower.productionCoefficient;
+    milk.number += cow.number * cow.productionCoefficient;
+    wool.number += sheep.number * sheep.productionCoefficient;
+    egg.number += chicken.number * chicken.productionCoefficient;
+    fabric.number += cotton.number * cotton.productionCoefficient;
+    fame.number += wheat.number * wheat.productionCoefficient;
+    oil.number += sunflower.number * sunflower.productionCoefficient;
 }
 
-//Weekly Consumption
+// Weekly Consumption (週次消費)
 function WeeklyConsumption() {
-    //Feed Consumption
+    // Feed Consumption (飼料消費)
     for (let i of animalList) {
-        feed.number = feed.number - i.consumptionCoefficient * i.number;
+        feed.number -= i.consumptionCoefficient * i.number;
     }
     if (feed.number < 0) {
-        alert("Animal Feed is Low. If you dont buy feed in the marketplace. Next week your animals will die.");
-        alert("1 Cow, 2 Sheep and 5 Chicken is dead.");
-        cow.number = cow.number - 1;
-        sheep.number = sheep.number - 2;
-        chicken.number = chicken.number - 5;
+        alert("飼料が不足しています。マーケットプレイスで飼料を購入しないと、次の週には動物が死んでしまいます。");
+        alert("1頭の牛、2匹の羊、5羽の鶏が死んでしまいます。");
+        cow.number -= 1;
+        sheep.number -= 2;
+        chicken.number -= 5;
         feed.number = 0;
     }
     for (let i of animalList) {
@@ -51,16 +51,16 @@ function WeeklyConsumption() {
     }
     weeklyFeedConsumption = Math.floor(feed.number / (cow.number * cow.consumptionCoefficient + sheep.number * sheep.consumptionCoefficient + chicken.number * chicken.consumptionCoefficient));
 
-    //Fertilizer Consumption
+    // Fertilizer Consumption (肥料消費)
     for (let i of plantList) {
-        fertilizer.number = fertilizer.number - i.consumptionCoefficient * i.number;
+        fertilizer.number -= i.consumptionCoefficient * i.number;
     }
     if (fertilizer.number < 0) {
-        alert("Plant Fertilizer is Low. If you dont buy fertilizer in the marketplace. Next week your plants will fade.");
-        alert("1 Cotton, 2 wheat and 2 sunflower is faded.");
-        cotton.number = cotton.number - 1;
-        wheat.number = wheat.number - 2;
-        sunflower.number = sunflower.number - 2;
+        alert("肥料が不足しています。マーケットプレイスで肥料を購入しないと、次の週には植物が枯れてしまいます。");
+        alert("1つの綿花、2つの小麦、2つのひまわりが枯れてしまいます。");
+        cotton.number -= 1;
+        wheat.number -= 2;
+        sunflower.number -= 2;
         fertilizer.number = 0;
     }
     for (let i of plantList) {
@@ -71,13 +71,13 @@ function WeeklyConsumption() {
     weeklyFertilizerConsumption = Math.floor(fertilizer.number / (cotton.number * cotton.consumptionCoefficient + wheat.number * wheat.consumptionCoefficient + sunflower.number * sunflower.consumptionCoefficient));
 }
 
-//Marketplace Buy Function
+// Marketplace Buy Function (マーケットプレイス購入関数)
 function MarketplaceBuy() {
     if (MarketplaceBuyForm.value < 1) {
-        alert("Must be bigger than zero");
+        alert("1以上の数を入力してください");
     } else {
         if (Number(MarketplaceBuyForm.value) > Math.floor((myFarm.money - productList[Number(MarketplaceBuySelect.value)].price) * Number(MarketplaceBuyForm.value))) {
-            alert("Money not enough.");
+            alert("お金が足りません。");
         } else {
             myFarm.money -= Number(MarketplaceBuyForm.value) * productList[Number(MarketplaceBuySelect.value)].price;
             productList[Number(MarketplaceBuySelect.value)].number += Number(MarketplaceBuyForm.value);
@@ -87,13 +87,13 @@ function MarketplaceBuy() {
     }
 }
 
-//Marketplace Sell Function
+// Marketplace Sell Function (マーケットプレイス販売関数)
 function MarketplaceSell() {
     if (MarketplaceSellForm.value < 1) {
-        alert("Must be bigger than zero");
+        alert("1以上の数を入力してください");
     } else {
         if (Number(MarketplaceSellForm.value) > productList[Number(MarketplaceSellSelect.value)].number) {
-            alert("Product Item not enough.");
+            alert("在庫が足りません。");
         } else {
             myFarm.money += Number(MarketplaceSellForm.value) * productList[Number(MarketplaceSellSelect.value)].price;
             productList[Number(MarketplaceSellSelect.value)].number -= Number(MarketplaceSellForm.value);
@@ -103,13 +103,13 @@ function MarketplaceSell() {
     }
 }
 
-//Supermarket Buy Function
+// Supermarket Buy Function (スーパーマーケット購入関数)
 function SupermarketBuy() {
     if (SupermarketBuyForm.value < 1) {
-        alert("Must be bigger than zero");
+        alert("1以上の数を入力してください");
     } else {
         if (Number(SupermarketBuyForm.value) > Math.floor((myFarm.money - productionList[Number(SupermarketBuySelect.value)].price) * Number(SupermarketBuyForm.value))) {
-            alert("Money not enough.");
+            alert("お金が足りません。");
         } else {
             myFarm.money -= Number(SupermarketBuyForm.value) * productionList[Number(SupermarketBuySelect.value)].price;
             productionList[Number(SupermarketBuySelect.value)].number += Number(SupermarketBuyForm.value);
@@ -119,15 +119,15 @@ function SupermarketBuy() {
     }
 }
 
-//Supermarket Sell Function
+// Supermarket Sell Function (スーパーマーケット販売関数)
 function SupermarketSell() {
     if (SupermarketSellForm.value < 1) {
-        alert("Must be bigger than zero");
+        alert("1以上の数を入力してください");
     } else {
         if (Number(SupermarketSellForm.value) > productionList[Number(SupermarketSellSelect.value)].number) {
-            alert("Production Item not enough.");
+            alert("在庫が足りません。");
         } else {
-            myFarm.money += Number(SupermarketSellForm.value) * productList[Number(SupermarketSellSelect.value)].price;
+            myFarm.money += Number(SupermarketSellForm.value) * productionList[Number(SupermarketSellSelect.value)].price;
             productionList[Number(SupermarketSellSelect.value)].number -= Number(SupermarketSellForm.value);
             ClearAllItems();
             DisplayAllItems();
@@ -135,9 +135,9 @@ function SupermarketSell() {
     }
 }
 
-//All Items Displayed to the Window
+// Display All Items Function (全アイテム表示関数)
 function DisplayAllItems() {
-    //Weekly Production Table
+    // Weekly Production Table (週次生産テーブル)
     let x = 1;
     for (let i of animalList) {
         WeeklyProductionAnimal.insertAdjacentHTML(
@@ -162,7 +162,7 @@ function DisplayAllItems() {
         );
     }
 
-    //Inventory Table
+    // Inventory Table (在庫テーブル)
     let y = 1;
     for (let i of productionList) {
         Inventory.insertAdjacentHTML(
@@ -175,7 +175,7 @@ function DisplayAllItems() {
         );
     }
 
-    //Statistics Table
+    // Statistics Table (統計テーブル)
     myFarm.totalFarmValue = 0;
     TotalFarmValue.innerHTML = myFarm.TotalFarmValue();
     Money.innerHTML = myFarm.money;
@@ -184,7 +184,7 @@ function DisplayAllItems() {
     FeedConsumption.innerHTML = `${weeklyFeedConsumption} week`;
     FertilizerConsumption.innerHTML = `${weeklyFertilizerConsumption} week`;
 
-    //Prices Table
+    // Prices Table (価格テーブル)
     let z = 1;
     for (let i of productList) {
         ProductionPrices.insertAdjacentHTML(
@@ -212,57 +212,17 @@ function DisplayAllItems() {
         );
     }
 
-    //Marketplace Table
-    //Buy
+    // Marketplace Table (マーケットプレイステーブル)
+    // Buy (購入)
     let l = 0;
     for (let i of productList) {
         MarketplaceBuySelect.insertAdjacentHTML("beforeend", `<option value="${l}">${i.name}</option>`);
         l++;
     }
-    //Sell
+    // Sell (販売)
     let m = 0;
     for (let i of productList) {
         MarketplaceSellSelect.insertAdjacentHTML("beforeend", `<option value="${m}">${i.name}</option>`);
         m++;
     }
-    //Supermarket Table
-    //Buy
-    let n = 0;
-    for (let i of productionList) {
-        SupermarketBuySelect.insertAdjacentHTML("beforeend", `<option value="${n}">${i.name}</option>`);
-        n++;
-    }
-    //Sell
-    let p = 0;
-    for (let i of productionList) {
-        SupermarketSellSelect.insertAdjacentHTML("beforeend", `<option value="${p}">${i.name}</option>`);
-        p++;
-    }
 }
-
-//All Items Clearing every week before the DisplayAllItems() function.
-function ClearAllItems() {
-    WeeklyProductionAnimal.innerHTML = "";
-    WeeklyProductionPlant.innerHTML = "";
-    Inventory.innerHTML = "";
-    ProductionPrices.innerHTML = "";
-    ProductPrices.innerHTML = "";
-    MarketplaceBuySelect.innerHTML = "";
-    MarketplaceSellSelect.innerHTML = "";
-    SupermarketBuySelect.innerHTML = "";
-    SupermarketSellSelect.innerHTML = "";
-    MarketplaceBuyForm.value = 0;
-    MarketplaceSellForm.value = 0;
-    SupermarketBuyForm.value = 0;
-    SupermarketSellForm.value = 0;
-}
-
-//All Function is here. and Triggered by NextWeek button
-function NextWeek() {
-    Pricing();
-    Production();
-    WeeklyConsumption();
-    ClearAllItems();
-    DisplayAllItems();
-}
-NextWeek();
