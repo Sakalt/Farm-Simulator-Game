@@ -24,6 +24,48 @@
             <h2>気候情報</h2>
             <p>現在の気候状態: <span id="climate-condition">normal</span></p>
         </section>
+        --マーケットプレイス-->
+        <div class="container">
+            <div class="row">
+                <div class="container col">
+                    <h5>マーケットプレイス（購入）</h5>
+                    <select class="form-select bg-dark text-white" id="MarketplaceBuySelect"></select>
+                    <div class="row my-3">
+                        <div class="col bg-dark text-white"><input class="form-control bg-dark text-white" type="number" min="0" id="MarketplaceBuyForm" /></div>
+                        <div class="col"><button id="MarketplaceBuyButton" onclick="MarketplaceBuy()" class="btn btn-success w-100">購入</button></div>
+                    </div>
+                </div>
+                <div class="container col">
+                    <h5>マーケットプレイス（販売）</h5>
+                    <select class="form-select bg-dark text-white" id="MarketplaceSellSelect"></select>
+                    <div class="row my-3">
+                        <div class="col bg-dark text-white"><input class="form-control bg-dark text-white" type="number" min="0" id="MarketplaceSellForm" /></div>
+                        <div class="col"><button id="MarketplaceSellButton" onclick="MarketplaceSell()" class="btn btn-danger w-100">販売</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="container col">
+                    <h5>スーパーマーケット（購入）</h5>
+                    <select class="form-select bg-dark text-white" id="SupermarketBuySelect"></select>
+                    <div class="row my-3">
+                        <div class="col bg-dark text-white"><input class="form-control bg-dark text-white" type="number" min="0" id="SupermarketBuyForm" /></div>
+                        <div class="col"><button id="SupermarketBuyButton" onclick="SupermarketBuy()" class="btn btn-success w-100">購入</button></div>
+                    </div>
+                </div>
+                <div class="container col">
+                    <h5>スーパーマーケット（販売）</h5>
+                    <select class="form-select bg-dark text-white" id="SupermarketSellSelect"></select>
+                    <div class="row my-3">
+                        <div class="col bg-dark text-white"><input class="form-control bg-dark text-white" type="number" min="0" id="SupermarketSellForm" /></div>
+                        <div class="col"><button id="SupermarketSellButton" onclick="SupermarketSell()" class="btn btn-danger w-100">販売</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
         <!--週間生産-->
         <div class="container">
             <div class="row">
@@ -135,49 +177,6 @@
                         </thead>
                         <tbody id="ProductPrices"></tbody>
                     </table>
-                </div>
-            </div>
-        </div>
-        <hr />
-
-        <!--マーケットプレイス-->
-        <div class="container">
-            <div class="row">
-                <div class="container col">
-                    <h5>マーケットプレイス（購入）</h5>
-                    <select class="form-select bg-dark text-white" id="MarketplaceBuySelect"></select>
-                    <div class="row my-3">
-                        <div class="col bg-dark text-white"><input class="form-control bg-dark text-white" type="number" min="0" id="MarketplaceBuyForm" /></div>
-                        <div class="col"><button id="MarketplaceBuyButton" onclick="MarketplaceBuy()" class="btn btn-success w-100">購入</button></div>
-                    </div>
-                </div>
-                <div class="container col">
-                    <h5>マーケットプレイス（販売）</h5>
-                    <select class="form-select bg-dark text-white" id="MarketplaceSellSelect"></select>
-                    <div class="row my-3">
-                        <div class="col bg-dark text-white"><input class="form-control bg-dark text-white" type="number" min="0" id="MarketplaceSellForm" /></div>
-                        <div class="col"><button id="MarketplaceSellButton" onclick="MarketplaceSell()" class="btn btn-danger w-100">販売</button></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="container col">
-                    <h5>スーパーマーケット（購入）</h5>
-                    <select class="form-select bg-dark text-white" id="SupermarketBuySelect"></select>
-                    <div class="row my-3">
-                        <div class="col bg-dark text-white"><input class="form-control bg-dark text-white" type="number" min="0" id="SupermarketBuyForm" /></div>
-                        <div class="col"><button id="SupermarketBuyButton" onclick="SupermarketBuy()" class="btn btn-success w-100">購入</button></div>
-                    </div>
-                </div>
-                <div class="container col">
-                    <h5>スーパーマーケット（販売）</h5>
-                    <select class="form-select bg-dark text-white" id="SupermarketSellSelect"></select>
-                    <div class="row my-3">
-                        <div class="col bg-dark text-white"><input class="form-control bg-dark text-white" type="number" min="0" id="SupermarketSellForm" /></div>
-                        <div class="col"><button id="SupermarketSellButton" onclick="SupermarketSell()" class="btn btn-danger w-100">販売</button></div>
-                    </div>
                 </div>
             </div>
         </div>
